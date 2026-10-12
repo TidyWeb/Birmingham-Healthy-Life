@@ -1,0 +1,28 @@
+record_type,measure,statistic,value,category,lower_bound,upper_bound,social_rent_tertile,hle_tertile,count,percentage
+summary,all areas,n,660,,,,,,,
+summary,social_rent_share_percent and hle_average_years,spearman,-0.8355855832822436,,,,,,,
+summary,social_rent_share_percent and hle_average_years,pearson,-0.81306817486985,,,,,,,
+quintile_break,social_rent_share_percent,boundary,0.8413967185527976,0th percentile,,,,,,
+quintile_break,social_rent_share_percent,boundary,7.525196124961613,20th percentile,,,,,,
+quintile_break,social_rent_share_percent,boundary,12.047812735738832,40th percentile,,,,,,
+quintile_break,social_rent_share_percent,boundary,18.67504096954914,60th percentile,,,,,,
+quintile_break,social_rent_share_percent,boundary,29.07847763368881,80th percentile,,,,,,
+quintile_break,social_rent_share_percent,boundary,69.1566265060241,100th percentile,,,,,,
+tertile_break,hle_average_years,boundary,53.7,0.00th percentile,,,,,,
+tertile_break,hle_average_years,boundary,61.099999999999994,33.33th percentile,,,,,,
+tertile_break,hle_average_years,boundary,66.80000000000001,66.67th percentile,,,,,,
+tertile_break,hle_average_years,boundary,75.69999999999999,100.00th percentile,,,,,,
+tertile_break,social_rent_share_percent,boundary,0.8413967185527976,0.00th percentile,,,,,,
+tertile_break,social_rent_share_percent,boundary,10.687022001132553,33.33th percentile,,,,,,
+tertile_break,social_rent_share_percent,boundary,21.330963793367452,66.67th percentile,,,,,,
+tertile_break,social_rent_share_percent,boundary,69.1566265060241,100.00th percentile,,,,,,
+bivariate_cell,area count,count,,social_rent_low__hle_high,,,low,high,169,25.606060606060606
+bivariate_cell,area count,count,,social_rent_low__hle_mid,,,low,mid,49,7.424242424242424
+bivariate_cell,area count,count,,social_rent_low__hle_low,,,low,low,2,0.30303030303030304
+bivariate_cell,area count,count,,social_rent_mid__hle_high,,,mid,high,52,7.878787878787879
+bivariate_cell,area count,count,,social_rent_mid__hle_mid,,,mid,mid,127,19.242424242424242
+bivariate_cell,area count,count,,social_rent_mid__hle_low,,,mid,low,41,6.212121212121212
+bivariate_cell,area count,count,,social_rent_high__hle_high,,,high,high,0,0.0
+bivariate_cell,area count,count,,social_rent_high__hle_mid,,,high,mid,44,6.666666666666667
+bivariate_cell,area count,count,,social_rent_high__hle_low,,,high,low,176,26.666666666666668
+summary,bivariate map,diagonal_percentage,71.51515151515152,social rent low with HLE high; mid with mid; high with low,,,,,472,71.51515151515152
