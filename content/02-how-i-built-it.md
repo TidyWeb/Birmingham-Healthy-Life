@@ -36,4 +36,4 @@ Most of my ETL happens in Notebook 02. First I extract each source exactly as it
 
 ## Two repositories
 
-I keep the notebooks and their data in one GitHub repository, and that's the one the course marks. This site lives in a second, smaller repository that only holds web pages. I build the notebook pages on this site straight from the executed notebook files, so the two can't drift apart.
+I keep the notebooks and their data in one GitHub repository, and that's the one the course marks. This site lives in a second, smaller repository that only holds web pages. I build the notebook pages on this site straight from the executed notebooks in the assessment repository, so the two can't drift apart.

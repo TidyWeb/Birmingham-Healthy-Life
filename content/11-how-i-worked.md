@@ -29,13 +29,13 @@ My Census screen confirmed 81 characteristics. That felt like a lot, and it was.
 
 I used AI throughout this project: Gemini, Codex and Claude, at every stage. 
 
-It wasn't peripheral, it is fundamental to this whole project.
+It wasn't peripheral. It was fundamental to this whole project.
 
 I used Claude as my idea sounding board.  I wanted to explore something meaningful to me, and used Claude to bounce ideas off.  Some stuck.
 
 I used Google Gemini as my research assistant.  We would seek out open and available datasets together, examine them for suitability, and reject the vast majority as unfit.
 
-Codex was my coding partner.  I would shape out rough code ideas in VS Code, outline plans and steps, then call on my handbuilt coding Robot Kevin who exists as a skill and as an entity with memory to everything I have learned from the LMS on this course.
+Codex was my coding partner.  I would shape out rough code ideas in VS Code, outline plans and steps, then call on my handbuilt coding Robot Kevin who exists as a skill, with a memory of everything I have learned from the LMS on this course.
 Kevin still needs a firm hand, as he can get carried away without close supervision and guidance.
 
-So AI in the form of LLMs  helped me find out what data was out there, talk through ideas, write code and draft wording. But I decided what to look at, which sources to use, what to leave out, and correct when a result didn't add up, or added up suspiciously too well. The majority of text is mine, and it says what I mean, and every number on this site comes from a notebook's output. My first notebook has a section on [how I worked]({root}notebooks/01-source-exploration.html#cell-d4e1a7c2).
+So AI in the form of LLMs helped me find out what data was out there, talk through ideas, write code and draft wording. But I decided what to look at, which sources to use, what to leave out, and corrected course when a result didn't add up, or added up suspiciously too well. The majority of text is mine, and it says what I mean, and every number on this site comes from a notebook's output. My first notebook has a section on [how I worked]({root}notebooks/01-source-exploration.html#cell-d4e1a7c2).

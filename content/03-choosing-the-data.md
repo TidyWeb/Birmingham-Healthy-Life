@@ -36,7 +36,7 @@ The years don't all line up. HLE covers 2019 to 2023, the Census was in March 20
 - **The railways.** They started the project, but in the end they were just window dressing, because my question is about neighbours and not about stations.
 - **Health and disability measures.** ONS builds HLE partly from people saying how healthy they are. If I tested health measures against it, I'd just be handing HLE its own answer back.
 - **Smoking.** I'd have liked it, but it's only published for whole councils and not for my small areas.
-- **The Index of Multiple Deprivation.** It has health built into it, so I left it out for the same reason as Health and disability measures.S
+- **The Index of Multiple Deprivation.** It has health built into it, so I left it out for the same reason as the health and disability measures.
 
 I did bring in household deprivation, but I only use it to describe areas. One of its four dimensions is health and disability, so I never put it into a model.
 
