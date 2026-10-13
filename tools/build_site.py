@@ -32,6 +32,7 @@ import os
 import re
 import shutil
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import markdown
 from PIL import Image
@@ -42,12 +43,13 @@ from pygments.lexers import PythonLexer
 # Where things are
 SITE = Path(__file__).resolve().parent.parent
 CONTENT = SITE / "content"
+# The site is built from the assessment repository, so it always shows exactly what is marked.
 PROJECT = Path(os.environ.get(
     "HLE_PROJECT",
-    "/home/Phil/C_C/Learn_Python_Data/Working Files/Unit 2/MAIN_PROJECT/Birmingham HLE",
+    "/home/Phil/C_C/Git/Code-Institute-DA-with-AI-Unit-2-Assessment",
 ))
-NOTEBOOK_DIR = PROJECT / "VS_CODE" / "Notebooks"
-CLEANED = PROJECT / "Data" / "Cleaned"
+NOTEBOOK_DIR = PROJECT / "notebooks"
+CLEANED = PROJECT / "data" / "cleaned"
 GITHUB_REPO = "https://github.com/TidyWeb/Code-Institute-DA-with-AI-Unit-2-Assessment"
 TABLEAU_URL = "https://public.tableau.com/views/BirminghamHLEFinal/Dashboard1"
 
@@ -75,6 +77,54 @@ MAX_FIGURE_WIDTH = 1800
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700"
          "&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap")
+
+
+def external_links_in_new_tab(document: str) -> str:
+    """Add safe new-tab attributes to external links in generated pages."""
+    own_host = "tidyweb.github.io"
+    own_path = "/Birmingham-Healthy-Life"
+
+    def update_anchor(match: re.Match[str]) -> str:
+        tag = match.group(0)
+        href_match = re.search(
+            r"""\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))""",
+            tag,
+            flags=re.IGNORECASE,
+        )
+        if not href_match:
+            return tag
+        href = next(value for value in href_match.groups() if value is not None)
+        if not href.lower().startswith(("http://", "https://")):
+            return tag
+        parsed = urlsplit(href)
+        own_path_match = parsed.path.rstrip("/")
+        if ((parsed.hostname or "").lower() == own_host
+                and (own_path_match == own_path or own_path_match.startswith(own_path + "/"))):
+            return tag
+        if re.search(r"\btarget\s*=", tag, flags=re.IGNORECASE):
+            return tag
+
+        rel_match = re.search(
+            r"""\srel\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))""",
+            tag,
+            flags=re.IGNORECASE,
+        )
+        if rel_match:
+            rel_value = next(value for value in rel_match.groups() if value is not None)
+            rel_tokens = rel_value.split()
+            for token in ("noopener", "noreferrer"):
+                if token not in rel_tokens:
+                    rel_tokens.append(token)
+            replacement = ' rel="' + " ".join(rel_tokens) + '"'
+            tag = tag[:rel_match.start()] + replacement + tag[rel_match.end():]
+            insertion = ' target="_blank"'
+        else:
+            insertion = ' target="_blank" rel="noopener noreferrer"'
+        if tag.endswith("/>"):
+            return tag[:-2] + insertion + tag[-2:]
+        return tag[:-1] + insertion + '>'
+
+    return re.sub(r"<a\b[^>]*>", update_anchor, document, flags=re.IGNORECASE | re.DOTALL)
 
 
 def nb_slug(num: str, title: str) -> str:
@@ -304,7 +354,7 @@ def asset_version() -> str:
 
 
 def page(title: str, body: str, active: str, root: str, chapters: list[dict], description: str = "") -> str:
-    return f"""<!doctype html>
+    document = f"""<!doctype html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -329,6 +379,7 @@ def page(title: str, body: str, active: str, root: str, chapters: list[dict], de
 </body>
 </html>
 """
+    return external_links_in_new_tab(document)
 
 
 def pager(chapters: list[dict], index: int, root: str) -> str:
@@ -388,7 +439,7 @@ def build_home(chapters: list[dict]) -> None:
 </body>
 </html>
 """
-    (SITE / "index.html").write_text(html_body, encoding="utf-8")
+    (SITE / "index.html").write_text(external_links_in_new_tab(html_body), encoding="utf-8")
 
 
 # ---------- Notebook pages ----------
