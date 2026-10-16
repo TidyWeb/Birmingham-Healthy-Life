@@ -1,6 +1,6 @@
 # Birmingham Healthy Life
 
-## [🌐 Open the live site: https://tidyweb.github.io/Birmingham-Healthy-Life/ ↗](https://tidyweb.github.io/Birmingham-Healthy-Life/)
+### [Visit the live site ↗](https://tidyweb.github.io/Birmingham-Healthy-Life/)
 
 
 The project site for my Code Institute Unit 2 assessment. It's served by GitHub Pages at https://tidyweb.github.io/Birmingham-Healthy-Life/.
