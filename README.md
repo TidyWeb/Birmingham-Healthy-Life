@@ -1,5 +1,8 @@
 # Birmingham Healthy Life
 
+## [🌐 Open the live site: https://tidyweb.github.io/Birmingham-Healthy-Life/ ↗](https://tidyweb.github.io/Birmingham-Healthy-Life/)
+
+
 The project site for my Code Institute Unit 2 assessment. It's served by GitHub Pages at https://tidyweb.github.io/Birmingham-Healthy-Life/.
 
 The notebooks and data are in the assessment repository: https://github.com/TidyWeb/Code-Institute-DA-with-AI-Unit-2-Assessment
